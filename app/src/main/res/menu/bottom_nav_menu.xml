@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/characterListFragment"
+        android:name="com.example.rickandmorti.presentation.character_flow.CharacterListFragment"
+        android:label="@string/characters"
+        android:icon="@drawable/ic_rick_96214"
+        android:title="@string/characters"/>
+
+
+    <item
+        android:id="@+id/episodesListFragment"
+        android:name="com.example.rickandmorti.presentation.episodes_flow.EpisodesListFragment"
+        android:label="@string/episodes"
+        android:icon="@drawable/ic_icons8summer"
+        android:title="@string/episodes"/>
+
+    <item
+        android:id="@+id/locationListFragment"
+        android:name="com.example.rickandmorti.presentation.location_flow.LocationListFragment"
+        android:icon="@drawable/ic_morty_96215"
+        android:title="@string/location"
+        android:label="@string/location"
+        />
+</menu>

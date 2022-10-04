@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".presentation.character_flow.CharacterDetailsFragment">
+
+    <ImageView
+        android:id="@+id/iv_avatar_character_details"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="casual"
+        android:textColor="#0BE414"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/iv_avatar_character_details"
+        app:layout_constraintStart_toEndOf="@+id/iv_avatar_character_details"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginTop="16dp"
+        tools:text="TextViewkjdsjfjjjjjj" />
+
+    <TextView
+        android:id="@+id/tv_status_character_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textColor="#0BE414"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="casual"
+        app:layout_constraintStart_toEndOf="@+id/iv_avatar_character_details"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="TextView" />
+
+    <TextView
+        android:id="@+id/tv_location_character_details"
+        android:textSize="30sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="casual"
+        android:textColor="#0BE414"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_status_character_details"
+        app:layout_constraintTop_toBottomOf="@id/tv_status_character_details"
+        tools:text="TextView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

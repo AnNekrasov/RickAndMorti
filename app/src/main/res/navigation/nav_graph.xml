@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/characterListFragment">
+
+    <fragment
+        android:id="@+id/characterListFragment"
+        android:name="com.example.rickandmorti.presentation.character_flow.CharacterListFragment"
+        android:label="fragment_character_list"
+        tools:layout="@layout/fragment_character_list" >
+        <action
+            android:id="@+id/action_characterListFragment_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailsFragment"
+        android:name="com.example.rickandmorti.presentation.character_flow.CharacterDetailsFragment"
+        android:label="CharacterDetailsFragment" >
+        <argument android:name="id"
+            app:argType="integer"/>
+    </fragment>
+    <fragment
+        android:id="@+id/episodesListFragment"
+        android:name="com.example.rickandmorti.presentation.episodes_flow.EpisodesListFragment"
+        android:label="fragment_episodes_list"
+        tools:layout="@layout/fragment_episodes_list" >
+        <action
+            android:id="@+id/action_episodesListFragment_to_episodesDetailsFragment"
+            app:destination="@id/episodesDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/episodesDetailsFragment"
+        android:name="com.example.rickandmorti.presentation.episodes_flow.EpisodesDetailsFragment"
+        android:label="fragment_episodes_details"
+        tools:layout="@layout/fragment_episodes_details" >
+        <argument android:name="id"
+        app:argType="integer"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/locationListFragment"
+        android:name="com.example.rickandmorti.presentation.location_flow.LocationListFragment"
+        android:label="fragment_location_list"
+        tools:layout="@layout/fragment_location_list" >
+        <action
+            android:id="@+id/action_locationListFragment_to_locationDetailsFragment"
+            app:destination="@id/locationDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationDetailsFragment"
+        android:name="com.example.rickandmorti.presentation.location_flow.LocationDetailsFragment"
+        android:label="fragment_location_details"
+        tools:layout="@layout/fragment_location_details">
+        <argument android:name="id"
+        app:argType="integer"/>
+        </fragment>
+</navigation>
