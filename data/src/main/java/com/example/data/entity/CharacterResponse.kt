@@ -26,7 +26,7 @@ data class CharacterResponse(
             species = species,
             gender = gender,
             imageUrl = image,
-            location = location.toDomainObject()
+            location = location.toDomainObject()//1
 
 
         )
