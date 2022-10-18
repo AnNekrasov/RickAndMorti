@@ -13,7 +13,7 @@ import com.example.rickandmorti.R
 import com.example.rickandmorti.databinding.ItemCharacterBinding
 
 //
-class CharacterListAdapter() :
+class CharacterListAdapter :
     RecyclerView.Adapter<CharacterListAdapter.MyViewHolder>() {
     private var listCharacter = mutableListOf<CharacterDomainModel>()
     private lateinit var binding: ItemCharacterBinding
@@ -60,7 +60,7 @@ class CharacterListAdapter() :
     }
 
     fun setList(list: List<CharacterDomainModel>) {
-        //      listCharacter.clear()
+             listCharacter.clear()
 //        val newLocationList = mutableListOf<CharacterDomainModel>()
 //        val diffCallback = DiffCallback(listCharacter, newLocationList)
 //        val diffResult = DiffUtil.calculateDiff(diffCallback)

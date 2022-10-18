@@ -25,4 +25,9 @@ interface CharacterApiService {
 
     @GET("character/{id}")
     suspend fun getCharacterById(@Path("id") id: Int): CharacterResponse
+
+//    @GET("character")
+//    suspend fun getCharacterPage(@Query("page")pageIndex: Int):
+//            CharacterResponse
+//    )
 }
