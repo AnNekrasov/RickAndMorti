@@ -13,4 +13,7 @@ class CharacterRepositoryImpl(
     override suspend fun getCharacterList(): List<CharacterDomainModel> {
         return apiService.getListCharacter().toDomainObject()
     }
+    override suspend fun getCharacterListByPage(page:Int): List<CharacterDomainModel> {
+        return apiService.getListCharacterByPage(page).toDomainObject()
+    }
 }

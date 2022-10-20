@@ -9,8 +9,8 @@ class GetCharacterListUseCase(
     suspend fun getCharacterList(): List<CharacterDomainModel> {
         return repository.getCharacterList()
 //    }
-//    suspend fun getCharacterList(page:Int):List<CharacterDomainModel> {
-//        return repository.getCharacterList()
-//    }
+    }
+    suspend fun getCharacterListByPage(page:Int):List<CharacterDomainModel> {
+        return repository.getCharacterListByPage(page)
     }
 }

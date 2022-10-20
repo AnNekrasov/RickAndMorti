@@ -12,6 +12,7 @@ import javax.inject.Inject
 
 
 @HiltViewModel
+
 class CharacterListViewModel @Inject constructor(
     private val getCharacterListUseCase: GetCharacterListUseCase
 ):ViewModel() {
@@ -20,6 +21,11 @@ class CharacterListViewModel @Inject constructor(
      fun loadCharacterList(){
         viewModelScope.launch(Dispatchers.IO){
             liveData.postValue(getCharacterListUseCase.getCharacterList())
+        }
+    }
+    fun loadCharacterByPage(id:Int){
+        viewModelScope.launch(Dispatchers.IO) {
+            liveData.postValue(getCharacterListUseCase.getCharacterListByPage(id))
         }
     }
 }

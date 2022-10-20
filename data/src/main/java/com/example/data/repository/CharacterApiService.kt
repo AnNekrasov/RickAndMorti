@@ -18,10 +18,10 @@ interface CharacterApiService {
 //
     @GET("character")
     suspend fun getListCharacterByPage(
-        // @Query("count") size:Int,
         @Query("page") page: Int
 
-    ): Response<CharacterListResponse>
+    ): CharacterListResponse
+    //Response<CharacterListResponse>
 
     @GET("character/{id}")
     suspend fun getCharacterById(@Path("id") id: Int): CharacterResponse
@@ -30,4 +30,5 @@ interface CharacterApiService {
 //    suspend fun getCharacterPage(@Query("page")pageIndex: Int):
 //            CharacterResponse
 //    )
+
 }
