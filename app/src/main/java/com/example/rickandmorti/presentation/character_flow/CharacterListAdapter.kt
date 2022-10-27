@@ -1,30 +1,22 @@
 package com.example.rickandmorti.presentation.character_flow
 
 import android.content.Context
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
-import androidx.paging.PagingDataAdapter
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.domain.model.CharacterDomainModel
-import com.example.domain.model.LocationDomainModel
-import com.example.rickandmorti.R
 import com.example.rickandmorti.databinding.ItemCharacterBinding
-import com.example.rickandmorti.paging.Constant
 
 //
 class CharacterListAdapter :
     RecyclerView.Adapter<CharacterListAdapter.MyViewHolder>() {
     private var listCharacter = mutableListOf<CharacterDomainModel>()
     private lateinit var binding: ItemCharacterBinding
-    lateinit var mcontext: Context
 
 
-    class LoadingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     class MyViewHolder(private val itemBinding: ItemCharacterBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
@@ -48,8 +40,6 @@ class CharacterListAdapter :
                 itemView.findNavController()
                     .navigate(action)
             }
-
-
         }
     }
 
@@ -69,7 +59,7 @@ class CharacterListAdapter :
     }
 
     fun setList(list: List<CharacterDomainModel>) {
-             listCharacter.clear()
+     //   listCharacter.clear()
 //        val newLocationList = mutableListOf<CharacterDomainModel>()
 //        val diffCallback = DiffCallback(listCharacter, newLocationList)
 //        val diffResult = DiffUtil.calculateDiff(diffCallback)
@@ -77,29 +67,30 @@ class CharacterListAdapter :
 //        newLocationList.addAll(list)
         //  diffResult.dispatchUpdatesTo(this)
     }
-    override fun getItemViewType(position: Int): Int {
-        return if (listCharacter[position] == null) {
-            Constant.VIEW_TYPE_LOADING
-        } else {
-            Constant.VIEW_TYPE_ITEM
-        }
-    }
-    fun addLoadingView() {
-        //add loading item
-        Handler().post {
-           // listCharacter.add(null)
-            notifyItemInserted(listCharacter.size - 1)
-        }
-    }
-
-    fun removeLoadingView() {
-        //Remove loading item
-        if (listCharacter.size != 0) {
-            listCharacter.removeAt(listCharacter.size - 1)
-            notifyItemRemoved(listCharacter.size)
-        }
-    }
 }
+//    override fun getItemViewType(position: Int): Int {
+//        return if (listCharacter[position] == null) {
+//            Constant.VIEW_TYPE_LOADING
+//        } else {
+//            Constant.VIEW_TYPE_ITEM
+//        }
+//    }
+//    fun addLoadingView() {
+//        //add loading item
+//        Handler().post {
+//           // listCharacter.add(null)
+//            notifyItemInserted(listCharacter.size - 1)
+//        }
+//    }
+//
+//    fun removeLoadingView() {
+//        //Remove loading item
+//        if (listCharacter.size != 0) {
+//            listCharacter.removeAt(listCharacter.size - 1)
+//            notifyItemRemoved(listCharacter.size)
+//        }
+//    }
+
 
 //
 //    class DiffCallback(

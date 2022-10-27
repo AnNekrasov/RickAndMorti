@@ -16,30 +16,11 @@ import javax.inject.Inject
 class CharacterListViewModel @Inject constructor(
     private val getCharacterListUseCase: GetCharacterListUseCase
 ):ViewModel() {
-   // val listData = Pager(PagingConfig(pageSize = 1))
+
     val liveData = MutableLiveData<List<CharacterDomainModel>>()
-     fun loadCharacterList(){
-        viewModelScope.launch(Dispatchers.IO){
-            liveData.postValue(getCharacterListUseCase.getCharacterList())
-        }
-    }
-    fun loadCharacterByPage(id:Int){
+    fun loadCharacterList(page: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            liveData.postValue(getCharacterListUseCase.getCharacterListByPage(id))
+            liveData.postValue(getCharacterListUseCase.getCharacterList(page))
         }
     }
 }
-//@HiltViewModel
-//class CharacterViewModel
-//@Inject
-//constructor(
-//    private val apiService: CharacterApiService
-//) : ViewModel() {
-//
-//    val listData = Pager(PagingConfig(pageSize = 1)) {
-//        CharacterListPaging(apiService)
-//
-//    }.flow.cachedIn(viewModelScope)
-//
-//}
-

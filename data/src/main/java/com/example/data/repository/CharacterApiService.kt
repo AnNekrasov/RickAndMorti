@@ -11,13 +11,13 @@ import retrofit2.http.Query
 interface CharacterApiService {
     //https://rickandmortyapi.com/api
 
-    @GET("character")
-    suspend fun getListCharacter(): CharacterListResponse
+//    @GET("character")
+//    suspend fun getListCharacter(): CharacterListResponse
 
     //  suspend fun getListCharacter(@Query("page")page:Int): CharacterListResponse
 //
     @GET("character")
-    suspend fun getListCharacterByPage(
+    suspend fun getListCharacter(
         @Query("page") page: Int
 
     ): CharacterListResponse

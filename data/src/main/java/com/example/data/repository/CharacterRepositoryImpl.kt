@@ -10,10 +10,10 @@ class CharacterRepositoryImpl(
         return  apiService.getCharacterById(id).toDomainObject()
     }
 
-    override suspend fun getCharacterList(): List<CharacterDomainModel> {
-        return apiService.getListCharacter().toDomainObject()
+    override suspend fun getCharacterList(page: Int): List<CharacterDomainModel> {
+        return apiService.getListCharacter(page).toDomainObject()
     }
-    override suspend fun getCharacterListByPage(page:Int): List<CharacterDomainModel> {
-        return apiService.getListCharacterByPage(page).toDomainObject()
-    }
+//    override suspend fun getCharacterListByPage(page:Int): List<CharacterDomainModel> {
+//        return apiService.getListCharacterByPage(page).toDomainObject()
+//    }
 }
